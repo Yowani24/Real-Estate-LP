@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+}
+
+body{
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+.interface_wrapper{
+    width: 80%;
+    margin: o auto;
+}
+
+/* =====================Header====================== */
+.header_wrapper{
+    display: flex;
+}
+header nav ul{
+    padding: 0;
+    display: flex;
+}
+header nav li{
+    list-style: none;
+    margin: 20px;
+}
+header nav a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+}

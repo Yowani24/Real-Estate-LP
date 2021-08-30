@@ -1,0 +1,376 @@
+*{
+    margin: 0;
+}
+
+body{
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+.interface_wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+/* ---------------------------RESPONSIVIDADE------------------- */
+@media (max-width:780px){
+    .interface_wrapper{
+        width: 95%
+    }
+}
+
+/* =====================HEADER====================== */
+header{
+    padding: 8px;
+    
+    background: #44A08D;
+    background: -webkit-linear-gradient(to right, #093637, #44A08D);
+    background: linear-gradient(to right, #44A08D, #093637);
+
+}
+.header_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo_box{
+    cursor: pointer;
+}
+.menu_icon{
+    display: none;
+}
+.menu_icon img{
+    width: 24px;
+}
+
+header nav ul{
+    padding: 0;
+    display: flex;
+}
+header nav li{
+    list-style: none;
+    margin: 20px;
+}
+header nav a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+/* ---------------------------RESPONSIVIDADE------------------- */
+
+
+@media (max-width:415px){
+    .logo_box img{
+        width: 150px;
+    }
+    
+    header nav{
+        display: none;
+    }
+
+    .menu_icon{
+        display: block;
+    }
+}
+
+
+/* ===================BANNER====================== */
+
+.banner{
+    width: 100%;
+    height: 300px;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+.banner p {
+    display: flex;
+    align-self: center;
+    position: absolute;
+    font-size: 40px;
+    top: 150px;
+}
+/* ---------------------------RESPONSIVIDADE------------------- */
+
+@media (max-width:415px){
+    .banner{
+        width: 100%;
+        height: 200px;
+    }
+    .banner img{
+        object-fit: cover;
+    }
+}
+
+/* ===================VITRINE DE IMÓVEIS====================== */
+.vitrine_sec{
+    margin-top: 10px;
+}
+.vitrine_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.imoveis_box {
+    width: 200px;
+    padding: 10px;
+
+
+    background: rgba( 255, 255, 255, 0.50 );
+    backdrop-filter: blur( 4.0px );
+    -webkit-backdrop-filter: blur( 4.0px );
+    border: 1px solid rgba(179, 173, 173, 0.18);
+
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    border-radius: 5px;
+
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+.imoveis_box:hover{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.imoveis_box img{
+    width: 100%;
+}
+.tipo_e_local{
+    text-align: center;
+    margin-top: 10px;
+    color: #1d1a1a;
+}
+.tipo_e_local p:nth-child(2){
+    margin-top: 5px;
+    background: #e8eeed;
+    border-radius: 5px;
+    padding: 5px;
+}
+.detalhes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.detalhes img{
+    width: 20px;
+}
+
+.detalhes span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detalhes p{
+   font-size: 13px;
+}
+
+.imoveis_box button{
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #1d1a1a;
+    cursor: pointer;
+    transition: .1s;
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.imoveis_box button:hover{
+    background:#bbdbd6;
+}
+
+/* ---------------------------RESPONSIVIDADE------------------- */
+
+@media (max-width:415px){
+    .imoveis_box{
+        width: 300px;
+    }
+}
+
+
+/* ==========================NOTÍCIAS====================== */
+.noticias_wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.noticias_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    width: 300px;
+    padding: 10px;
+    border-radius: 2px;
+    margin: 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+.noticias_box img{
+    width: 100%;
+}
+.titulo_da_noticia p:nth-child(1){
+    font-size: 25px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    padding-bottom: 10px;
+} 
+.titulo_da_noticia p:nth-child(2){
+    font-size: 16px;
+    margin-top: 5px;
+} 
+.noticias_box button{
+    align-self: flex-end;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: .1s;
+
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, 
+    rgb(236, 238, 240) 0px 0px 0px 1px inset;
+}
+
+.noticias_box button:hover{
+    background:#bbdbd6;
+}
+
+
+/* ==========================MAIS ACESSADAS===================== */
+.mas_acessadas_sec{
+    margin: 50px 0px;
+}
+.mas_acessadas_sec h1{
+    text-align: center;
+    font-size: 40px;
+    color:#1a1818;
+}
+#maisAcessadas{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+
+    width: 58%;
+    margin: 20px auto;
+}
+.mas_acessadas_sec p{
+    font-size: 15px;
+    color: rgb(43, 39, 39);
+    padding: 8px 10px;
+    border-radius:20px;
+    margin: 15px 10px;
+    background: rgb(231, 236, 236);
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.mas_acessadas_sec p:hover{
+    background:#d2e7e3;
+}
+/* ---------------------------RESPONSIVIDADE------------------- */
+
+@media (max-width:415px){
+    .mas_acessadas_sec h1{
+        font-size: 35px;
+    }
+    .mas_acessadas_sec p{
+        font-size: 12px;
+        margin: 15px 5px;
+    }
+    #maisAcessadas{
+        width: 100%;
+        margin: 10px auto;
+    }
+}
+
+
+/* ====================================LOCALIZAÇÃO====================== */
+.location_sec{
+    margin: 50px 0;
+}
+.maps_box{
+    width: 100%;
+}
+.maps_box iframe{
+    width: 100%;
+    height: 350px;
+}
+
+/* ===================FOOTER======================== */
+.footer_sec{
+    padding: 60px 0;
+    background:#44A08D;
+}
+.footer_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.footer_menu{
+    display: flex;
+    align-items: flex-start;
+}
+.footer_menu span{
+    margin: 0 20px;
+    color: rgb(206, 214, 214);
+}
+/* ---------------------------RESPONSIVIDADE------------------- */
+
+@media (max-width:415px){
+    .footer_wrapper{
+        flex-direction: column;
+    }
+    .footer_menu{
+        flex-direction: column;
+    }
+    .footer_menu span{
+        margin: 20px;
+    }
+}
+
+/* ===========================SOCIAL============= */
+.social{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    bottom: 20px;
+    right: 10px;
+}
+.social img{
+    width: 20px;
+    background: #1a1818;
+    padding: 8px;
+    border-radius: 100%;
+    margin: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+.social img:hover{
+    background:#44A08D;
+}
+
+/* ---------------------------RESPONSIVIDADE------------------- */
+
+
+@media (max-width:415px){
+    .social{
+        display: none;
+    }
+}

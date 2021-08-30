@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
+
+
+    <script>
+        fetch("./showcase_content.json")
+        .then(response => response.json())
+        .then(data => {
+            for(let i = 0; i < data.length; i++){
+                document.getElementById('vitrine_sec').innerHTML += `
+                
+
+
+                <div class="imoveis_box">
+                <img src="${data[i].capa}" alt="">
+                <div class="tipo_e_local">
+                    <p>${data[i].tipo}</p>
+                    <p>${data[i].bairro} ${data[i].UF}</p>
+                </div>
+
+                <div class="detalhes">
+                    <span>
+                        <img src="./images/bed.svg" alt="">
+                        <p>${data[i].quartos}</p>
+                    </span>
+                    <span>
+                        <img src="https://img.icons8.com/ios-filled/80/000000/shower-and-tub.png"/>
+                        <p>${data[i].banheiros}</p>
+                    </span>
+                    <span>
+                        <img src="./images/car.svg" alt="">
+                        <p>${data[i].vagas}</p>
+                    </span>
+                    <span>
+                        <img src="https://img.icons8.com/material-two-tone/50/000000/diagonal-lines.png"/>
+                        <p>${data[i].metragem}</p>
+                    </span>
+                </div>
+
+                <button>Ver mais</button>
+
+            </div>
+
+                `
+
+            }
+        });
+    </script>
+
+    <style>
+        .vitrine_sec{
+    margin: 20px 0px;
+}
+.vitrine_wrapper{
+    display: flex;
+    justify-content: center;
+}
+.imoveis_box {
+    width: 200px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+    </style>
+</head>
+<body>
+
+    <section class="vitrine_sec">
+        <div id="vitrine_sec" class="interface_wrapper vitrine_wrapper ">
+            
+        </div>
+    </section>
+
+</body>
+</html>

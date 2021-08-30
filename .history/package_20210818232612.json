@@ -1,0 +1,11 @@
+{
+  "name": "inforcetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"Error: no build specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
+
+
+    <script>
+        
+        fetch("./showcase_content.json")
+        .then(response => response.json())
+        .then(data => {
+            for(let i = 0; i < data.length; i++){
+                document.getElementById('vitrine_sec').innerHTML += `
+                
+
+
+                <div class="imoveis_box">
+                <img src="${data[i].capa}" alt="">
+                <div class="tipo_e_local">
+                    <p>${data[i].tipo}</p>
+                    <p>${data[i].bairro} ${data[i].UF}</p>
+                </div>
+
+                <div class="detalhes">
+                    <span>
+                        <img src="./images/bed.svg" alt="">
+                        <p>${data[i].quartos}</p>
+                    </span>
+                    <span>
+                        <img src="https://img.icons8.com/ios-filled/80/000000/shower-and-tub.png"/>
+                        <p>${data[i].banheiros}</p>
+                    </span>
+                    <span>
+                        <img src="./images/car.svg" alt="">
+                        <p>${data[i].vagas}</p>
+                    </span>
+                    <span>
+                        <img src="https://img.icons8.com/material-two-tone/50/000000/diagonal-lines.png"/>
+                        <p>${data[i].metragem}</p>
+                    </span>
+                </div>
+
+                <button>Ver mais</button>
+
+            </div>
+
+                `
+
+            }
+        });
+    </script>
+
+    <script>
+        function myFunction() {
+            const all = document.getElementById("vitrine_sec").children[0].style.margin-left = "100px";
+            
+        }
+    </script>
+
+    <style>
+        .interface_wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+       .vitrine_sec{
+    margin: 20px 0px;
+}
+.vitrine_wrapper{
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    background: red;
+    overflow: hidden;
+
+}
+.imoveis_box {
+    min-width: 204px;
+    padding: 10px;
+
+
+    background: rgba( 255, 255, 255, 0.50 );
+    backdrop-filter: blur( 4.0px );
+    -webkit-backdrop-filter: blur( 4.0px );
+    border: 1px solid rgba(179, 173, 173, 0.18);
+
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    border-radius: 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+.imoveis_box:hover{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.imoveis_box img{
+    width: 100%;
+}
+.tipo_e_local{
+    text-align: center;
+    margin-top: 10px;
+    color: #1d1a1a;
+}
+.tipo_e_local p:nth-child(2){
+    margin-top: 5px;
+    background: #e8eeed;
+    border-radius: 5px;
+    padding: 5px;
+}
+.detalhes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.detalhes img{
+    width: 20px;
+}
+
+.detalhes span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detalhes p{
+   font-size: 13px;
+}
+
+.imoveis_box button{
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #1d1a1a;
+    cursor: pointer;
+    transition: .1s;
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.imoveis_box button:hover{
+    background:#bbdbd6;
+}
+    </style>
+</head>
+<body>
+
+    <section class="vitrine_sec">
+        <div id="vitrine_sec" class="interface_wrapper vitrine_wrapper ">
+            
+        </div>
+        <button onclick="myFunction()">Left</button>
+        <button>Right</button>
+        <p id="demo">demo</p>
+    </section>
+
+</body>
+</html>

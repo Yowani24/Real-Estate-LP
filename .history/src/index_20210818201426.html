@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inforce FonteEnd Test</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+        fetch("/showcase_content.json")
+        .then(response => response.json())
+        .then(data => {
+            for(let i = 0; i < data.length; i++){
+                document.getElementById('vitrine_sec').innerHTML += `
+                
+
+
+                <div class="imoveis_box">
+                <img src="${data[i].capa}" alt="">
+                <div class="tipo_e_local">
+                    <p>${data[i].tipo}</p>
+                    <p>${data[i].bairro} ${data[i].UF}</p>
+                </div>
+
+                <div class="detalhes">
+                    <span>
+                        <img src="/images/bed.svg" alt="">
+                        <p>${data[i].quartos}</p>
+                    </span>
+                    <span>
+                        <img src="https://img.icons8.com/ios-filled/80/000000/shower-and-tub.png"/>
+                        <p>${data[i].banheiros}</p>
+                    </span>
+                    <span>
+                        <img src="/images/car.svg" alt="">
+                        <p>${data[i].vagas}</p>
+                    </span>
+                    <span>
+                        <img src="https://img.icons8.com/material-two-tone/50/000000/diagonal-lines.png"/>
+                        <p>${data[i].metragem}</p>
+                    </span>
+                </div>
+
+                <button>Ver mais</button>
+
+            </div>
+
+                `
+
+            }
+        });
+
+        fetch("/news_content.json")
+        .then(response => response.json())
+        .then(data => {
+            for(let i = 0; i < data.length; i++){
+                document.getElementById('vitrine_sec').innerHTML += `
+                
+
+                `
+
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="interface_wrapper header_wrapper">
+            <div class="logo_box">
+                <img src="../images/logo_topo.webp" alt="">
+            </div>
+    
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Imóveis</a></li>
+                        <li><a href="">Serviços</a></li>
+                        <li><a href="">Fale Conosco</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner_sec">
+        <div id="banner" class="interface_wrapper">
+            <div class="banner" v-for="items in bannerItems">
+                <img :src="items.imagem" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="vitrine_sec">
+        <div id="vitrine_sec" class="interface_wrapper vitrine_wrapper ">
+            
+        </div>
+        
+    </section>
+
+
+    <section class="noticias_sec">
+        <div class="interface_wrapper">
+            <img src="https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel5.jpg" alt="">
+            <div class="titulo_da_noticia">
+                <p>Título da notícia</p>
+                <p>Conteúdo da notícia</p>
+            </div>
+            <button>Ler mais</button>
+        </div>
+    </section>
+
+
+    <section class="mas_acessadas_sec">
+        <div class="interface_wrapper">
+            <h1>Mais Acessadas</h1>
+            <div id="maisAcessadas">
+                <p v-for="item in items">{{item.text}}</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script>
+        var app = new Vue({
+            el: '#banner',
+            data: {
+                bannerItems: [
+                                {
+                                    "titulo": "Melhores Imóveis do Rio de Janeiro!",
+                                    "imagem": "https://labs.inforcedata.com.br/desafio-frontend/banner/banner1.jpg", 
+                                    "call_to_action": "#"
+                                },
+                                // {
+                                //     "titulo": "Venha conhecer a Imobiliária Inforce.",
+                                //     "imagem": "https://labs.inforcedata.com.br/desafio-frontend/banner/banner2.jpg", 
+                                //     "call_to_action": "#"
+                                // }
+                            ]
+            }
+        })
+
+        var app = new Vue({
+            el: '#maisAcessadas',
+            data: {
+                items: [
+                    {text:'Apartamentos na Barra'},
+                    {text:'Apartamentos em Urca'},
+                    {text:'Apartamentos no Recreio'},
+                    {text:'Apartamentos no Leblon'},
+                    {text:'Apartamentos na Gávea'},
+                ]
+            }
+        })
+    </script>
+    
+</body>
+</html>

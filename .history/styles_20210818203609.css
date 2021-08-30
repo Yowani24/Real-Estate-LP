@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+}
+
+body{
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+.interface_wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* =====================HEADER====================== */
+header{
+    
+    padding: 8px;
+    
+    background: #44A08D;
+    background: -webkit-linear-gradient(to right, #093637, #44A08D);
+    background: linear-gradient(to right, #44A08D, #093637);
+
+}
+.header_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul{
+    padding: 0;
+    display: flex;
+}
+header nav li{
+    list-style: none;
+    margin: 20px;
+}
+header nav a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+/* ===================BANNER====================== */
+
+.banner{
+    width: 100%;
+    height: 300px;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+
+/* ===================VITRINE DE IMÓVEIS====================== */
+.vitrine_sec{
+    margin-top: 10px;
+}
+.vitrine_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.imoveis_box {
+    width: 200px;
+    padding: 10px;
+
+
+    background: rgba( 255, 255, 255, 0.50 );
+    backdrop-filter: blur( 4.0px );
+    -webkit-backdrop-filter: blur( 4.0px );
+    border: 1px solid rgba(179, 173, 173, 0.18);
+
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    border-radius: 5px;
+
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+.imoveis_box:hover{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.imoveis_box img{
+    width: 100%;
+}
+.tipo_e_local{
+    text-align: center;
+    margin-top: 10px;
+    color: #1d1a1a;
+}
+.tipo_e_local p:nth-child(2){
+    margin-top: 5px;
+    background: #e8eeed;
+    border-radius: 5px;
+    padding: 5px;
+}
+.detalhes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.detalhes img{
+    width: 20px;
+}
+
+.detalhes span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detalhes p{
+   font-size: 13px;
+}
+
+.imoveis_box button{
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #1d1a1a;
+    cursor: pointer;
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+
+/* ==========================NOTÍCIAS====================== */
+.noticias_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    width: 300px;
+    padding: 10px;
+    border-radius: 2px;
+
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+.noticias_box img{
+    width: 100%;
+}
+.titulo_da_noticia p:nth-child(1){
+    font-size: 25px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    padding-bottom: 2px;
+} 
+.titulo_da_noticia p:nth-child(2){
+    font-size: 16px;
+    margin-top: 5px;
+} 
+.noticias_box button{
+    align-self: flex-end;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 30px;
+
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+
+
+
+/* ==========================MAIS ACESSADAS===================== */
+.mas_acessadas_sec{
+    margin-bottom: 50px;
+}
+.mas_acessadas_sec h1{
+    text-align: center;
+    font-size: 40px;
+    color:#1a1818;
+}
+#maisAcessadas{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+
+    width: 58%;
+    margin: 20px auto;
+}
+.mas_acessadas_sec p{
+    font-size: 15px;
+    color: rgb(43, 39, 39);
+    padding: 8px 10px;
+    border-radius:20px;
+    margin: 15px 10px;
+    background: rgb(231, 236, 236);
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.mas_acessadas_sec p:hover{
+    background:rgb(174, 174, 231);
+}

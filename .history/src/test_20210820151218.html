@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <script>
+        
+        fetch("./showcase_content.json")
+        .then(response => response.json())
+        .then(data => {
+            for(let i = 0; i < data.length; i++){
+                document.getElementById('vitrine_sec').innerHTML += `
+                
+
+
+                <div class="imoveis_box">
+                <img src="${data[i].capa}" alt="">
+                <div class="tipo_e_local">
+                    <p>${data[i].tipo}</p>
+                    <p>${data[i].bairro} ${data[i].UF}</p>
+                </div>
+
+                <div class="detalhes">
+                    <span>
+                        <img src="./images/bed.svg" alt="">
+                        <p>${data[i].quartos}</p>
+                    </span>
+                    <span>
+                        <img src="https://img.icons8.com/ios-filled/80/000000/shower-and-tub.png"/>
+                        <p>${data[i].banheiros}</p>
+                    </span>
+                    <span>
+                        <img src="./images/car.svg" alt="">
+                        <p>${data[i].vagas}</p>
+                    </span>
+                    <span>
+                        <img src="https://img.icons8.com/material-two-tone/50/000000/diagonal-lines.png"/>
+                        <p>${data[i].metragem}</p>
+                    </span>
+                </div>
+
+                <button>Ver mais</button>
+
+            </div>
+
+                `
+
+            }
+        });
+    </script>
+
+    <!-- <script>
+        function myFunction(n) {
+            const all = document.getElementById("vitrine_sec").children;
+
+            for (var i = 0; i < 3; i++){
+                all[0].style.marginLeft = n + "px";
+            }
+        }
+        
+    </script> -->
+
+    <style>
+        .interface_wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+       .vitrine_sec{
+    margin: 20px 0px;
+}
+.vitrine_wrapper{
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    /* background: red; */
+    overflow: hidden;
+
+}
+.imoveis_box {
+    min-width: 204px;
+    padding: 10px;
+    transition: .5s;
+
+
+    background: rgba( 255, 255, 255, 0.50 );
+    backdrop-filter: blur( 4.0px );
+    -webkit-backdrop-filter: blur( 4.0px );
+    border: 1px solid rgba(179, 173, 173, 0.18);
+
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    border-radius: 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+.imoveis_box:hover{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.imoveis_box img{
+    width: 100%;
+}
+.tipo_e_local{
+    text-align: center;
+    margin-top: 10px;
+    color: #1d1a1a;
+}
+.tipo_e_local p:nth-child(2){
+    margin-top: 5px;
+    background: #e8eeed;
+    border-radius: 5px;
+    padding: 5px;
+}
+.detalhes{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.detalhes img{
+    width: 20px;
+}
+
+.detalhes span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detalhes p{
+   font-size: 13px;
+}
+
+.imoveis_box button{
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #1d1a1a;
+    cursor: pointer;
+    transition: .1s;
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.imoveis_box button:hover{
+    background:#bbdbd6;
+}
+
+.all{
+    display: flex;
+    justify-content: center;
+}
+.box{
+    width: 300px;
+    height: 200px;
+    background: crimson;
+}
+.box img {
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+
+    <section class="vitrine_sec">
+        <div id="vitrine_sec" class="interface_wrapper vitrine_wrapper ">
+            
+        </div>
+        <!-- <button onclick="myFunction(-244)">Left</button>
+        <button onclick="myFunction(244)">Right</button>
+        <p id="demo">demo</p> -->
+    </section>
+
+    <div class="all">
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $('.all').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
+	
+    </script>
+
+</body>
+</html>

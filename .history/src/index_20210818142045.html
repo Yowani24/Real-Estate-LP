@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inforce FonteEnd Test</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <!-- <script>
+        fetch("/banner_content.json")
+        .then(response => response.json())
+        .then(data => {
+            for(let i = 0; i < data.length; i++){
+                document.getElementById('cona').innerHTML += data[i].titulo + ``;
+
+            }
+        })
+    </script> -->
+</head>
+<body>
+    <header>
+        <div class="interface_wrapper header_wrapper">
+            <div class="logo_box">
+                <img src="../images/logo_topo.webp" alt="">
+            </div>
+    
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Imóveis</a></li>
+                        <li><a href="">Serviços</a></li>
+                        <li><a href="">Fale Conosco</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner_sec">
+        <div id="banner" class="interface_wrapper">
+            <div class="banner" v-for="items in bannerItems">
+                <img :src="items.imagem" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="vitrine_sec">
+        <div class="interface_wrapper">
+            <div class="imoveis_box">
+                <img src="https://images.unsplash.com/photo-1588012886079-baef0ac45fbd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=747&q=80" alt="">
+                <div class="tipo_e_local">
+                    <p>Apartamento</p>
+                    <p>Barra da Tijuca Rj</p>
+                </div>
+
+                <div class="detalhes">
+                    <span>
+                        <p>Quarto</p>
+                        <p>1</p>
+                    </span>
+                    <span>
+                        <p>Garagem</p>
+                        <p>1</p>
+                    </span>
+                    <span>
+                        <p>Metragem</p>
+                        <p>124m</p>
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <script>
+        var app = new Vue({
+            el: '#banner',
+            data: {
+                bannerItems: [
+                                {
+                                    "titulo": "Melhores Imóveis do Rio de Janeiro!",
+                                    "imagem": "https://labs.inforcedata.com.br/desafio-frontend/banner/banner1.jpg", 
+                                    "call_to_action": "#"
+                                },
+                                // {
+                                //     "titulo": "Venha conhecer a Imobiliária Inforce.",
+                                //     "imagem": "https://labs.inforcedata.com.br/desafio-frontend/banner/banner2.jpg", 
+                                //     "call_to_action": "#"
+                                // }
+                            ]
+            }
+        })
+    </script>
+    
+</body>
+</html>
